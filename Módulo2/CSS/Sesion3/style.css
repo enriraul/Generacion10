@@ -1,0 +1,53 @@
+/* 
+
+    Selectores:
+
+        elemento/etiqueta: nombreEtiqueta
+        id: #NombreEtiqueta
+        clase: .NombreEtiqueta
+
+
+*/
+h2, p{
+    color:red;
+}
+#Prueba{
+    color:rgb(129, 91, 91);
+}
+.ColorOscuro{
+    color:rgb(205, 180, 56);
+    font-size: 10px;
+}
+
+div p{
+    color: black;
+}
+div h2{
+    color:brown;
+}
+
+div .ColorOscuro{
+    color:blue;
+    font-size: 60px;
+}
+
+div #Opcion{
+
+}
+
+div.contenedor{
+
+}
+div.contenedor:first-child{
+
+}
+div.contenedor:nth-child{
+
+}
+div.contenedor:last-child{
+
+}
+
+.EtiqueH4{
+    color:chartreuse;
+}
