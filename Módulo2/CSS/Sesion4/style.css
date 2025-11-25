@@ -1,0 +1,55 @@
+h2{
+    /* font-size: 30px; */
+    text-align: center;
+}
+p{
+    /*color*/
+    color:rgb(41, 138, 115);
+    /*propiedades texto*/
+    font-family: Arial, sans-serif;
+    /*Grosor de las letras*/
+    font-weight:lighter;
+    /*Estilo de las letras*/
+    font-style: oblique;
+
+    /*Formatos de texto*/
+    line-height: 2.0; /*Entre lineado*/
+    letter-spacing: 1px; /*Espacio entre letras*/
+    word-spacing: 2px;
+    text-indent: 20px;
+}
+
+.border-texto{
+    border: double black 5px;
+    border-style:solid;
+    border-color: blue;
+    border-width: 10px;
+
+    border-top: 10px dashed red;
+    border-bottom: 5px solid black;
+    border-left: 7px dotted blue;
+    border-right: 15px groove green;
+
+    border: rgb(112, 59, 59) solid 5px;
+    border-radius: 0px;
+    height: 200px;
+    width: 600px;
+}
+
+.background-div{
+    background-color: rgb(154, 154, 180);
+    height: 400px;
+    width: 600px;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRceABJRj-dt51MQ9crGPnd9SBRrk9iPpJSpw&s");
+    background-repeat: no-repeat;
+    /* background-size:contain; */
+    background-position: top right;
+}
+
+body{
+   background-color: aqua; 
+}
+
+*{
+    font-size: medium;
+}
