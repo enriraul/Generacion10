@@ -1,0 +1,31 @@
+section{
+    border: 5px solid darkblue;
+    width: 250px;
+    height: 250px;
+    position: relative;
+    
+}
+
+.contenedor{
+    background-color: darkslategray;
+    width: 100px;
+    height: 100px;
+    position:absolute;
+    /* top: 0px;
+    left:0px;
+    right:0px;
+    bottom: 0px; */
+    inset: 0;
+    margin: auto;
+    /* right: 5%; */
+}
+
+.red{
+    background-color: red;
+}
+.blue{
+    background-color: blue;
+}
+.green{
+    background-color: green;
+}
