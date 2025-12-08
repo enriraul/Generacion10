@@ -1,0 +1,26 @@
+.contenedor{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 2fr 1fr 5fr 2fr;
+    height: 500px;
+}
+header{
+    background-color: cadetblue;
+    grid-column: 1/-1;
+}
+nav{
+    background-color: rgb(52, 83, 84);
+    grid-column: 1/-1;
+}
+main{
+    background-color: rgb(141, 180, 181);
+    grid-column:1/4;
+}
+aside{
+    background-color: chocolate;
+    grid-column: 4/6;
+}
+footer{
+    background-color: rgb(138, 76, 32);
+    grid-column: 1/-1;
+}

@@ -1,0 +1,61 @@
+.segmento{
+    width: 400px;/*100vw*/
+    background-color: darkslategray;
+}
+
+@media(max-width:600px){
+    .segmento{
+        width: 100%;
+        background-color: darkviolet;
+    }
+}
+
+@media (min-width:600px)  and (max-width:900px){
+    .segmento{
+        width: 80%;
+        background-color: brown;
+    }
+}
+
+@media (min-width:1200px) {
+    .segmento{
+        width: 50%;
+        background-color: chocolate;
+    }
+}
+
+/* 
+    Unidades estáticas
+    px 
+
+    Unidades de medida relativa
+    
+    %: Unidad relativa del tamaño relacionado al padre.
+
+    em: Unidad relativa de la fuente del elemento del padre
+    ejemplo:
+    HTML
+    <section>
+        <div
+        div>
+    </section>
+    section{ 
+        font-size: 40px;
+        width: 400px
+    }
+    section div{
+        font-size: 0.5em (20px)
+        width: 50%
+    }
+
+    rem: Unidad relativa al tamaño de fuente de la raiz (la página misma)
+    valor base es de 16px
+    h1 = rem
+    h2 = 
+
+
+    vh vw: Unidad relativa que toma como referencia la vista de la pantalla (viewport)
+
+    1vh = 1% del total de la vista en la pantalla
+    100vh = 100% de la pantalla
+*/

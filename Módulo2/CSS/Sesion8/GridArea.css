@@ -1,0 +1,34 @@
+.contenedor{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 2fr 1fr 5fr 2fr;
+    grid-template-areas: 
+    "lg hd hd hd hd"
+    "ft ft ft ft ft"
+    "ad ad mn mn mn"
+    "nv nv nv nv nv"
+    ;
+}
+header{
+    background-color: cadetblue;
+    grid-area: hd;
+}
+div{
+    grid-area:lg;
+}
+nav{
+    background-color: rgb(52, 83, 84);
+    grid-area: nv;
+}
+main{
+    background-color: rgb(141, 180, 181);
+    grid-area: mn;
+}
+aside{
+    background-color: chocolate;
+    grid-area: ad
+}
+footer{
+    background-color: rgb(138, 76, 32);
+    grid-area: ft;
+}
