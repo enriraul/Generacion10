@@ -1,0 +1,14 @@
+.logo-principal{
+    width: 4rem;
+    border-radius: 50%;
+}
+
+.navbar-section{
+    height: 8rem;
+    background-color: darkblue;
+}
+
+.nav-link{
+    color:white;
+    font-size: 1.4rem;
+}
