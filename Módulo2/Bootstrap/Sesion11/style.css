@@ -1,14 +1,58 @@
 .logo-principal{
-    width: 4rem;
+    width: 6rem;
     border-radius: 50%;
+    background-color: white;
 }
 
 .navbar-section{
     height: 8rem;
-    background-color: darkblue;
+    background-color: darkolivegreen;
 }
 
 .nav-link{
     color:white;
     font-size: 1.4rem;
+}
+
+.logo-cv{
+    width: 17rem;
+    border-radius: 50%;
+    border: 1rem solid darkolivegreen;
+}
+
+.carousel-inner{
+    height: 20rem;
+    overflow: hidden;
+}
+
+.carousel-item{
+    height: 100%;
+}
+
+.carousel-img{
+    width: 100%;
+    object-fit:cover;
+    object-position: center;
+}
+
+.form-cv{
+    border: 5px solid darkolivegreen;
+    border-radius: 7.5%;
+}
+
+footer{
+    height: 7rem;
+    background-color: darkolivegreen;
+}
+
+.bi{
+    color: white;
+    font-size: 1.2rem;
+    margin: 5px;
+    border: 5px solid  rgb(51, 63, 28);
+    border-radius: 50%;
+}
+
+a{
+    text-decoration: none;
 }
