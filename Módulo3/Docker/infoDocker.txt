@@ -1,6 +1,8 @@
 docker ps //Enlistar los contenedor existentes (activos)
 docker-compose up -d //Cargar el docker File, crear imagen y contenedor
+docker exec -it postgres-clase bash
 
+psql -U admin -d postgres
 
 
 /// BASH
