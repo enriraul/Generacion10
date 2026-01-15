@@ -1,0 +1,15 @@
+docker ps //Enlistar los contenedor existentes (activos)
+docker-compose up -d //Cargar el docker File, crear imagen y contenedor
+
+
+
+/// BASH
+
+cd path/file/  permite cambiar de directorio
+ls   Enlista los elementos dentro de el directorio posicionado
+
+
+//Meta comandos
+\l enlistar las bases de datos
+\du enlistar usuarios
+\c conectarBase de datos
