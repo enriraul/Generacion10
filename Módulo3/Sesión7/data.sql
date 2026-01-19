@@ -1,4 +1,4 @@
-INSERT INTO estudiante (matricula, nombre_completo, edad, fecha_alta, sancionado) VALUES
+INSERT INTO alumno (matricula, nombre_completo, edad, fecha_alta, sancionado) VALUES
 ('A2023001', 'Juan Carlos Hernández López', 19, '2023-01-15', false),
 ('A2023002', 'María Fernanda Gómez Ruiz', 20, '2023-01-16', false),
 ('A2023003', 'Luis Alberto Pérez Torres', 22, '2023-01-18', true),
