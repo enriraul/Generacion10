@@ -22,7 +22,7 @@ CREATE TABLE alumno(
 CREATE TABLE expediente(
     idExpediente int PRIMARY KEY,
     matricula TEXT UNIQUE,
-    FOREIGN KEY (matricula) REFERENCES alumno(matricula);
+    FOREIGN KEY (matricula) REFERENCES alumno(matricula)
 );
 
 -- Alumno - Materia:  N-N
@@ -32,6 +32,8 @@ CREATE TABLE inscripcion(
     idMateria TEXT,
     fecha_alta DATE DEFAULT CURRENT DATE,
     PRIMARY KEY (matricula, idMateria),
-    FOREIGN KEY (matricula) REFERENCES alumno(matricula);
-    FOREIGN KEY (idMateria) REFERENCES materia(idMateria);
+    FOREIGN KEY (matricula) REFERENCES alumno(matricula),
+    FOREIGN KEY (idMateria) REFERENCES materia(idMateria)
 );
+
+
