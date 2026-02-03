@@ -52,5 +52,11 @@ public class Main{
 
         System.out.printf("Hola Mundo");
 
+        /*
+            Ejecución del código
+            Nota: Nos debemos posicionar en el mismo fichero que el codigo
+            java nombreArchivo.java
+        */
     }
+
 }
