@@ -78,6 +78,7 @@ public class EstructuraControl{
             
             }
         */
+       /*
         int valor;
 
         valor = 3;
@@ -94,7 +95,7 @@ public class EstructuraControl{
                 break;
             default: //coc
                 System.out.println("Opción no válida");
-        }
+        }*/
         /*
             switch(case)
             caso 1: suman
@@ -108,6 +109,82 @@ public class EstructuraControl{
         ******************************************************
                             Ciclos
         ******************************************************
+        */
+
+        /* 
+            For : Ciclo iterativos donde se conoce el número de ciclos
+            Sintaxis:
+            for(PuntoDePartida; CondiciónDeParo; Incremento)
+            for(int i=0; i<10; i++){
+                instrucciones
+            }
+       
+        */
+
+        //Código del diagrama de flujo CicloFor.png
+        /*
+        int n;
+        n=10;
+        for (int i=1;i<=n;i++) {
+            System.out.println(i);
+        }*/
+        /*
+        factorial
+        Suman N números
+        Recorrer Arreglos/listas/ArrayList
+        
+        factorial(n) = 1*2*3*4*..*x
+        */
+        /*int n = 10;
+        int factorial = 1;
+        for(int i=1;i<=n;i++){
+            factorial = i*factorial;
+            System.out.println(
+                String.format("""
+                Iteracion: %d
+                Valor de Factorial actual: %d
+                ________________________________
+                """,i, factorial )
+            );
+        }
+        System.out.println(factorial);
+        */
+
+        /*
+        Ciclo While: ciclo determinado por una condición de paro
+
+        Sintáxis:
+        while(condición(es)){
+            Intrucciones
+        }
+        */
+        /*
+        int numeroMagico=10,numeroUsuario;
+
+        while (numeroMagico!=numeroUsuario) { 
+            if(numeroMagico>numeroUsuario){
+                System.out.println("El número mágico es mayor al número que propocionaste");
+            }
+            else{
+                System.out.println("El número mágico es menor al número que propocionaste");
+            }
+            //Preguntarle una vez más por un nuevo número mágico
+        }
+        */
+        /*
+            Ciclo do-While: Las instrucciones se realizan al menos una vez, y esto
+            lo determina una condición de ciclo
+            Sintáxis:
+            do{
+                instrucciones
+            }while(condición);
+        */
+        /*
+        int n;
+        do { 
+            System.out.println("Ingresa un número: ");
+            //Ingresa el usuario el número
+        } while (!(n>0));
         */
     }       
 }
