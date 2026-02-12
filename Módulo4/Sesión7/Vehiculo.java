@@ -41,5 +41,39 @@ public class Vehiculo{
     public void setModelo(String modelo){
         this.modelo = modelo;
     }
+    public void setMarca(String marca){
+        this.marca = marca;
+    }
+    public void setAño(int año){
+        this.año = año;
+    }
+    public void setMatricula(String Matricula){
+        this.matricula = Matricula;   
+    }
+    public void setColor(String color){
+        this.color = color;
+    }
+     /*
+
+        Motocicletas
+        -Cilindrada
+        -TipoModelo
+        -TotalPasajeros
+
+        ArrayList Estacionamiento
+    
+    */
+
+    public String getInfo(){
+        return String.format("""
+        -------------------------
+        Modelo: %s
+        Marca: %s
+        Año: %d
+        Matricula: %s
+        Color: %s
+        """,this.modelo, this.marca, this.año, this.matricula, this.color);
+
+    }
 
 }
