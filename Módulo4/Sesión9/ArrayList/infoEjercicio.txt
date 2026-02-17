@@ -1,0 +1,27 @@
+Actividad: Agenda
+
+Clase abstracta Contactos
+    nombre
+    apellido
+    correo
+    numero
+    get/set
+    info()
+
+ContactosPersonales (par)
+    alias
+    redesSociales
+    get/set
+
+ContactosLaborales (impar)
+    nombreEmpresa
+    Cargo
+    get/set
+
+Agenda
+    ArrayList<Contactos>
+
+    AgregarContactos
+    BuscarContactos
+    ActualizarContactos
+    EliminarContactos
