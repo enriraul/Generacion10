@@ -3,12 +3,14 @@ public abstract class  Contactos{
     private String apellido;
     private String correo;
     private String numero;
+    private String tipoContacto;
 
-    public Contactos(String nombre, String apellido, String correo, String numero){
+    public Contactos(String nombre, String apellido, String correo, String numero, String tipoContacto){
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
         this.numero = numero;
+        this.tipoContacto = tipoContacto;
     }
 
     //Métodos Get
@@ -24,6 +26,9 @@ public abstract class  Contactos{
     }
     public String getNumero(){
         return this.numero;
+    }
+    public String getTipoContacto(){
+        return this.tipoContacto;
     }
 
     //Métodos set

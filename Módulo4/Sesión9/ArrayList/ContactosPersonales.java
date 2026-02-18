@@ -2,8 +2,8 @@ public class ContactosPersonales extends Contactos{
     private String alias;
     private String redes;
 
-    public ContactosPersonales(String nombre, String apellido, String correo, String número, String alias, String redes){
-        super( nombre, apellido, correo, número);
+    public ContactosPersonales(String nombre, String apellido, String correo, String número,String tipoContacto ,String alias, String redes){
+        super( nombre, apellido, correo, número,tipoContacto);
         this.alias = alias;
         this.redes = redes;
 

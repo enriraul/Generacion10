@@ -9,9 +9,9 @@ public class ContactosLaborales extends Contactos {
 
     /** Constructor completo */
     public ContactosLaborales(String nombre, String apellido,
-                               String correo, String numero,
+                               String correo, String numero,String tipoContacto,
                                String nombreEmpresa, String cargo) {
-        super(nombre, apellido, correo, numero);
+        super(nombre, apellido, correo, numero,tipoContacto);
         this.nombreEmpresa = nombreEmpresa;
         this.cargo         = cargo;
     }
