@@ -15,12 +15,14 @@ public class Agenda{
         for (Contactos contactos_i : agenda) {
             if(tipoContactos.equalsIgnoreCase("laborales")){
                 if (contactos_i.getTipoContacto().equalsIgnoreCase("laborales")) {
-                    contactos_i.info();
+                    ContactosLaborales contactosl_i = (ContactosLaborales)contactos_i;
+                    contactosl_i.info();
                 }
             }
             else if (tipoContactos.equalsIgnoreCase("personales")) {
                 if (contactos_i.getTipoContacto().equalsIgnoreCase("personales")) {
-                    contactos_i.info();
+                    ContactosPersonales contactosp_i = (ContactosPersonales) contactos_i;
+                    contactosp_i.info();
                 }
             }
             else{
@@ -34,10 +36,33 @@ public class Agenda{
         for (int i = 0; i < agenda.size(); i++) {
             if(agenda.get(i).getTipoContacto().equalsIgnoreCase("personales")){
                 ContactosPersonales contacto = (ContactosPersonales)agenda.get(i);
-                contacto.setRedes(alias);
+                contacto.setAlias(alias);
+            }
+        }
+    }
 
-                ContactosLaborales contactol = (ContactosLaborales)agenda.get(i);
-                contactol.
+    public void ActualizarRedes(String redes){
+        for (int i = 0; i < agenda.size(); i++) {
+            if(agenda.get(i).getTipoContacto().equalsIgnoreCase("personales")){
+                ContactosPersonales contacto = (ContactosPersonales)agenda.get(i);
+                contacto.setRedes(redes);
+            }
+        }
+    }
+
+    public void ActualizarNombreEmpresa(String nombreEmpresa){
+        for (int i = 0; i < agenda.size(); i++) {
+            if(agenda.get(i).getTipoContacto().equalsIgnoreCase("laborales")){
+                ContactosLaborales contacto = (ContactosLaborales)agenda.get(i);
+                contacto.setNombreEmpresa(nombreEmpresa);
+            }
+        }   
+    }
+    public void ActualizarCargo(String cargo){
+        for (int i = 0; i < agenda.size(); i++) {
+            if(agenda.get(i).getTipoContacto().equalsIgnoreCase("laborales")){
+                ContactosLaborales contacto = (ContactosLaborales)agenda.get(i);
+                contacto.setCargo(cargo);
             }
         }
     }
