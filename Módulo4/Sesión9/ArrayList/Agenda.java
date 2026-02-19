@@ -26,8 +26,14 @@ public class Agenda{
                 }
             }
             else{
-                System.out.println("Contacto tipo: "+contactos_i.getTipoContacto());
-                contactos_i.info();
+                if (contactos_i.getTipoContacto().equalsIgnoreCase("laborales")) {
+                    ContactosLaborales contactosl_i = (ContactosLaborales)contactos_i;
+                    contactosl_i.info();
+                }
+                else{
+                    ContactosPersonales contactosp_i = (ContactosPersonales) contactos_i;
+                    contactosp_i.info();
+                }
             }
         }
     }
