@@ -6,6 +6,14 @@ public class Main{
         Biblioteca biblioteca = new Biblioteca();
         ManejoArchivos  ma = new ManejoArchivos();
         ma.CargarLibros(rutaAutores, rutaLibros, biblioteca);
-        biblioteca.mostrarBibliografia();
+        biblioteca.mostrarObrasAutor("J.R.R. Tolkien");
+
+
+        /*
+            Actividad:
+            Crear un método que devuelva todas las publicaciones de un 
+            autor en especifico.
+        
+        */
     }
 }

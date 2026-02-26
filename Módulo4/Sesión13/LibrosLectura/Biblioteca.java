@@ -19,4 +19,12 @@ public class Biblioteca{
             System.out.println(libro_i.info());
         }
     }
+
+    public void mostrarObrasAutor(String nombreAutor){
+        for (Libro libro_i : bibliografia) {
+            if (nombreAutor.equalsIgnoreCase(libro_i.getAutor().getNombre()+" "+libro_i.getAutor().getApellido())) {
+                System.out.println(libro_i.info());
+            }
+        }
+    }
 }

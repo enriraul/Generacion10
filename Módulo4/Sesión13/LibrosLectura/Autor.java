@@ -1,3 +1,5 @@
+
+
 public class Autor{
     private String Nombre, Apellido, Genero, Nacionalidad;
 
@@ -43,4 +45,16 @@ public class Autor{
         ___________________________
         """,this.Nombre, this.Apellido, this.Genero, this.Nacionalidad);
     }
+
+
+    /*
+        package nombreCarpeta;
+    
+        nombreCapeta
+            -bin
+            -lib
+            -src
+                -archivos.java
+            javac *.java
+    */
 }
