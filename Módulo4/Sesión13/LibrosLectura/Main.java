@@ -8,6 +8,12 @@ public class Main{
         ma.CargarLibros(rutaAutores, rutaLibros, biblioteca);
         biblioteca.mostrarObrasAutor("J.R.R. Tolkien");
 
+        /*
+        
+            El método de escritura en donde describa todas las 
+            obras de un autor en especifico.
+        */
+
 
         /*
             Actividad:
