@@ -1,7 +1,12 @@
 import java.io.BufferedReader;  //io = input output
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.time.LocalDate;
 import java.util.ArrayList;
+
 
 public class ManejoArchivos{
 
@@ -41,7 +46,7 @@ public class ManejoArchivos{
     public void CargarLibros(String rutaAutores, String rutaLibros, Biblioteca biblioteca){
         ArrayList<Autor> autores = this.CargarAutores(rutaAutores);
         String line;
-        try (BufferedReader br = new BufferedReader(new FileReader(rutaLibros))){
+        try (BufferedReader br = new BufferedReader(new FileReader(rutaLibros,StandardCharsets.UTF_8))){
             while((line = br.readLine())!=null){
                 String [] elementos = line.split(",");
                 if(!elementos[0].equalsIgnoreCase("ISBN")){
@@ -62,6 +67,34 @@ public class ManejoArchivos{
         }catch(IOException e){
             System.out.println(e.getMessage());
         }
+    }
+
+    public void GenerarObrasAutor(String NombreAutor, Biblioteca bibliografia){
+        
+        LocalDate today = LocalDate.now();
+        String rutaArchivo = NombreAutor+"_registroObra_"+today+".csv";
+        ArrayList<Libro> obrasAutor = bibliografia.getObrasAutor(NombreAutor);
+
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter(rutaArchivo,StandardCharsets.UTF_8,true))){
+            bw.write("Nombre del Autor");
+            bw.newLine();
+            bw.write(NombreAutor);
+            bw.newLine();
+            bw.newLine();
+            bw.write("ISBN, Nombre de la Obra, Editorial, Año");
+            bw.newLine();
+            for (Libro obra_i : obrasAutor) {
+                String obra = obra_i.getISBN()+","+obra_i.getNombreObra()+
+                ","+obra_i.getEditorial()+","+obra_i.getAño();
+                bw.write(obra);
+                bw.newLine();
+            }
+            bw.close();
+
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
     }
 
 }

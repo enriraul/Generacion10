@@ -7,11 +7,15 @@ public class Main{
         ManejoArchivos  ma = new ManejoArchivos();
         ma.CargarLibros(rutaAutores, rutaLibros, biblioteca);
         biblioteca.mostrarObrasAutor("J.R.R. Tolkien");
+        ma.GenerarObrasAutor("J.R.R. Tolkien", biblioteca);
 
         /*
         
             El método de escritura en donde describa todas las 
             obras de un autor en especifico.
+
+            Inicio 9:33
+            Finalizaremos: 9:48
         */
 
 

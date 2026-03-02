@@ -27,4 +27,14 @@ public class Biblioteca{
             }
         }
     }
+
+    public ArrayList<Libro> getObrasAutor(String nombreAutor){
+        ArrayList<Libro> obrasAutor = new ArrayList<>();
+        for (Libro libro_i : bibliografia) {
+            if (nombreAutor.equalsIgnoreCase(libro_i.getAutor().getNombre()+" "+libro_i.getAutor().getApellido())) {
+                obrasAutor.add(libro_i);
+            }
+        }
+        return obrasAutor;
+    }
 }

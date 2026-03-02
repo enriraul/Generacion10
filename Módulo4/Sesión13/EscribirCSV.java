@@ -8,7 +8,7 @@ public class EscribirCSV{
     public static void main(String[] args) {
         String rutaArchivo = "./LibrosLectura/archivoPrueba.csv";  
 
-        try(BufferedWriter bw = new BufferedWriter(new FileWriter(rutaArchivo,StandardCharsets.UTF_8))){
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter(rutaArchivo,StandardCharsets.UTF_8,true))){
             bw.write("Nombre,Apellido,Nacionalidad");
             bw.newLine();
             bw.write("Enrique,Olguín,Mexicano");
