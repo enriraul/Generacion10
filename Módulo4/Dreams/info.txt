@@ -1,0 +1,31 @@
+Encapsulamiento
+
++ public  : Sin restricciones
+- private : Acceso único dentro de su clase
+# protected : Acceso único dentro de su clase y clases heredadas
+
+Relaciones 
+__ relación
+-> Dependencia
+c --- *
+
+
+Estructura de archivos del proyecto
+
+- Dreams
+    - bin //
+    - db  //Estructura dentro de la base de datos
+        - data
+        - script
+        - uml (e-r)
+    - lib //Librerias externas
+    - src
+        -uml (modelo de clases)
+        -interfaz 
+        -img
+        
+
+Documento en proceso del UML de Dreams
+
+https://drive.google.com/file/d/1xLQzc7o3UOq_vYtmIFjVE0zxltE3KjGZ/view?usp=drive_link
+
