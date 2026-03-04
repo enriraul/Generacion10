@@ -21,7 +21,6 @@ public class Cliente {
         return this.correo;
     }
 
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
