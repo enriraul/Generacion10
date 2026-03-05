@@ -29,3 +29,27 @@ Documento en proceso del UML de Dreams
 
 https://drive.google.com/file/d/1xLQzc7o3UOq_vYtmIFjVE0zxltE3KjGZ/view?usp=drive_link
 
+===========================
+Comndos DOCKER
+===========================
+
+docker ps 
+cd  path_to_file
+docker cp db.sql postgres-clase:db.sql
+docker cp data.sql postgres-clase:data.sql
+docker exec -it postgres-clase bash
+psql -U admin
+CREATE DATABASE dreams WITH OWNER admin;
+psql -U admin -d dreams -f db.sql
+psql -U admin -d dreams -f data.sql
+psql -U admin -d dreams 
+select * from cliente;
+select * from producto;
+
+
+========================
+
+Comandos de compilación y ejecución en java
+
+javac -cp "bin;lib/postgresql-42.7.5.jar" -d bin src/archivo.java
+java -cp "bin;lib/postgresql-42.7.5.jar" src/archivo.java
