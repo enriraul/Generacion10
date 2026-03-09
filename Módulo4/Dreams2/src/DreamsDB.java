@@ -1,9 +1,10 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;//select
 import java.sql.Statement;
-
+import java.util.List;
 
 public class DreamsDB{
     /*
@@ -54,4 +55,41 @@ public class DreamsDB{
             System.out.println(e.getMessage());
         }
     }
+
+/*
+ private String Nombre;
+    private Double Precio;
+    private List<String> Categoria;
+    private Integer Stock;
+
+    idProducto SERIAL PRIMARY KEY,
+    nombre varchar(50) NOT NULL,
+    categoria text NOT NULL,
+    precio numeric(10,2) NOT NULL,
+    stock integer NOT NULL
+ */
+
+    public void ingresarProducto(String nombre, Double precio, List<String> categoria, Integer stock){
+        String QsetProducto = "INSERT INTO producto(nombre, categoria, precio, stock) VALUES (?,?,?,?)";
+        String categorias = "";
+        for (String categoria_i : categoria) {
+            categorias = categorias+categoria_i+",";
+        }
+        categorias = categorias.substring(0, categoria.size()-1);
+
+        try(PreparedStatement pstmt = conn.prepareStatement(QsetProducto)){
+            pstmt.setString(1,nombre);
+            pstmt.setString(2,categorias);
+            pstmt.setDouble(3, precio);
+            pstmt.setInt(4, stock);
+            int cambios = pstmt.executeUpdate();
+            System.out.println("Se han realizado: "+cambios+" cambio(s)");
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+        }  
+    }
+    /* Actividad: Crear el método que permita la creación de 
+    nuevos clientes y la inserción en la base de datos 
+    Finalización de la actividad: 9:55
+    */
 }

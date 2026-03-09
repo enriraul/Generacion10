@@ -11,7 +11,7 @@ CREATE TABLE Cliente(
 CREATE TABLE Producto(
     idProducto SERIAL PRIMARY KEY,
     nombre varchar(50) NOT NULL,
-    categoria varchar(20) NOT NULL,
+    categoria text NOT NULL,
     precio numeric(10,2) NOT NULL,
     stock integer NOT NULL
 );
