@@ -51,6 +51,9 @@ public class Venta{
         }
     }
 
+    public ArrayList<Carrito> getCarrito(){
+        return this.carrito;
+    }
 
     /* Método de proceder a pago*/
 }

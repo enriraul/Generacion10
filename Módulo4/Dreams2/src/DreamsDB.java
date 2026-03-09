@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;//select
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DreamsDB{
@@ -27,7 +28,7 @@ public class DreamsDB{
     }
 
     public void mostrarInventario(){
-        String consulta = "select * from producto";
+        String consulta = "select * from producto"; //"select * from producto where id = "+indId; 
         try (
             Statement stmt = this.conn.createStatement();
             ResultSet rs = stmt.executeQuery(consulta);
@@ -56,19 +57,6 @@ public class DreamsDB{
         }
     }
 
-/*
- private String Nombre;
-    private Double Precio;
-    private List<String> Categoria;
-    private Integer Stock;
-
-    idProducto SERIAL PRIMARY KEY,
-    nombre varchar(50) NOT NULL,
-    categoria text NOT NULL,
-    precio numeric(10,2) NOT NULL,
-    stock integer NOT NULL
- */
-
     public void ingresarProducto(String nombre, Double precio, List<String> categoria, Integer stock){
         String QsetProducto = "INSERT INTO producto(nombre, categoria, precio, stock) VALUES (?,?,?,?)";
         String categorias = "";
@@ -88,8 +76,52 @@ public class DreamsDB{
             System.out.println(e.getMessage());
         }  
     }
-    /* Actividad: Crear el método que permita la creación de 
-    nuevos clientes y la inserción en la base de datos 
-    Finalización de la actividad: 9:55
+
+    public void ingresarCliente(String nombre, String correo, String rol){
+    // query para insertar un nuevo cliente en la tabla cliente
+        String QsetCliente = "INSERT INTO cliente(nombre, correo, rol) VALUES(?, ?, ?)";
+
+        try (PreparedStatement pstmt = this.conn.prepareStatement(QsetCliente);)
+        {
+            pstmt.setString(1, nombre);
+            pstmt.setString(2, correo);
+            pstmt.setString(3, rol);
+
+            int filasAfectadas = pstmt.executeUpdate();
+
+            System.out.println("Cliente agregado exitosamente. Filas afectadas: " + filasAfectadas);
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    /*
+        Método para actualizar el stock del producto;
     */
+    public void ActualizarStock(Venta venta){
+        try {
+            conn.setAutoCommit(false);
+            String QStock = "Select stock from producto WHERE id = ";
+            String actualizarStock = "UPDATE producto SET stock = ? WHERE  id = ?";
+            ArrayList<Carrito>  carrito = venta.getCarrito();
+            for (Carrito producto_i : carrito) {
+                int cantidad = producto_i.getCantidad();
+                int id = producto_i.getProducto().getId();
+                try(Statement stmt = conn.createStatement();
+                ResultSet  rs = stmt.executeQuery(QStock);){
+                    int cantidad_producto = rs.getInt("stock");
+                    try(PreparedStatement pstmt = conn.prepareStatement(actualizarStock)){
+                        
+                        pstmt.setInt(1,cantidad_producto-cantidad);
+                        pstmt.setInt(2,id);
+                        pstmt.executeUpdate();
+                    }
+                }
+            }
+            conn.commit();
+        }catch(SQLException e){ 
+            System.out.println(e.getMessage());
+        }
+    }
+
 }

@@ -1,15 +1,17 @@
 import java.util.List;
 
 public class Producto{
+    private int id;
     private String Nombre;
     private Double Precio;
     private List<String> Categoria;
     private Integer Stock;
 
 
-    public Producto(String Nombre,Double Precio,
+    public Producto(int id,String Nombre,Double Precio,
     List<String> Categoria, Integer Stock)
     {
+        this.id = id;
         this.Nombre = Nombre;
         this.Precio = Precio;
         this.Categoria = Categoria;
@@ -35,7 +37,9 @@ public class Producto{
         this.Categoria = Categoria;
     }
 
-
+    public int getId(){
+        return this.id;
+    }
     public String getNombre()
     {
         return this.Nombre;
