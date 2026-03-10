@@ -108,13 +108,21 @@ public class DreamsDB{
                 int cantidad = producto_i.getCantidad();
                 int id = producto_i.getProducto().getId();
                 try(Statement stmt = conn.createStatement();
-                ResultSet  rs = stmt.executeQuery(QStock);){
+                ResultSet  rs = stmt.executeQuery(QStock+id);){
                     int cantidad_producto = rs.getInt("stock");
                     try(PreparedStatement pstmt = conn.prepareStatement(actualizarStock)){
-                        
-                        pstmt.setInt(1,cantidad_producto-cantidad);
-                        pstmt.setInt(2,id);
-                        pstmt.executeUpdate();
+                        if(cantidad_producto-cantidad>0){
+                            pstmt.setInt(1,cantidad_producto-cantidad);
+                            pstmt.setInt(2,id);
+                            pstmt.executeUpdate();
+                        }
+                        else{
+                            String deleteQ = "delete from producto WHERE id = ?";
+                            try (PreparedStatement ps = conn.prepareStatement(deleteQ)){
+                                ps.setInt(1,id);
+                                ps.executeUpdate();
+                            }
+                        }
                     }
                 }
             }
