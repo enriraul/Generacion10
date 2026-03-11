@@ -77,6 +77,8 @@ public class DreamsDB{
         }  
     }
 
+    //validarCliente
+
     public void ingresarCliente(String nombre, String correo, String rol){
     // query para insertar un nuevo cliente en la tabla cliente
         String QsetCliente = "INSERT INTO cliente(nombre, correo, rol) VALUES(?, ?, ?)";
