@@ -17,7 +17,8 @@ public class CrearCliente{
     public void crearUsuario(){
         String nombre = view.usertxt.getText();
         String correo = view.correotxt.getText();
-        if (nombre.length()>0 && correo.length()>0) {
+        if (nombre.length()>0 && correo.length()>0 && db.ingresarCliente(nombre, correo, "")) {
+            JOptionPane.showMessageDialog(null, "Usuario creado");
             nav.CargarPanel("Login");
         }
         else{

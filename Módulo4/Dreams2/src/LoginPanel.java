@@ -10,7 +10,7 @@ public class LoginPanel extends JPanel {
         setLayout(null);
         userL = new JLabel("Usuario");
         userL.setBounds(100, 100, 150, 30);
-        psswdL = new JLabel("Contraseña");
+        psswdL = new JLabel("Correo");
         psswdL.setBounds(100, 150 , 150, 30);
         usertxt = new JTextField();
         usertxt.setBounds(280, 100, 250, 30);

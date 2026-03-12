@@ -27,8 +27,9 @@ public class DreamsDB{
         }
     }
 
-    public void mostrarInventario(){
+    public String mostrarInventario(){
         String consulta = "select * from producto"; //"select * from producto where id = "+indId; 
+        String productos_info = "";
         try (
             Statement stmt = this.conn.createStatement();
             ResultSet rs = stmt.executeQuery(consulta);
@@ -49,12 +50,13 @@ public class DreamsDB{
                 Disponibles: %d
                 ______________________________________
                 """, idProducto,nombre, categoria,precio, stock);
-                System.out.println(infoProducto);
+                productos_info = productos_info + infoProducto;
             }
-            
+            return productos_info;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+        return "Hubo algún problema, imposible cargar datos";
     }
 
     public void ingresarProducto(String nombre, Double precio, List<String> categoria, Integer stock){
@@ -100,7 +102,7 @@ public class DreamsDB{
         return false;
     }
 
-    public void ingresarCliente(String nombre, String correo, String rol){
+    public boolean  ingresarCliente(String nombre, String correo, String rol){
     // query para insertar un nuevo cliente en la tabla cliente
         String QsetCliente = "INSERT INTO cliente(nombre, correo, rol) VALUES(?, ?, ?)";
 
@@ -111,12 +113,13 @@ public class DreamsDB{
             pstmt.setString(3, rol);
 
             int filasAfectadas = pstmt.executeUpdate();
-
-            System.out.println("Cliente agregado exitosamente. Filas afectadas: " + filasAfectadas);
+            return true;
+            //System.out.println("Cliente agregado exitosamente. Filas afectadas: " + filasAfectadas);
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+        return false;
     }
     /*
         Método para actualizar el stock del producto;
