@@ -70,3 +70,23 @@
         echo $indice, $valor;
     }
 ?>
+
+<?php
+
+    function nombreFuncion(){
+        return 
+    }
+
+    $valorRetorno = nombreFuncion();
+
+    // function nombreFuncion2(&$x){
+
+    // }
+
+    function operador($a,$b){
+        return $a + $b;
+    }
+    function($a,$b,$operacion){
+        return $operacion($a,$b);
+    }
+?>
